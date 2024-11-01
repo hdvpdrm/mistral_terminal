@@ -25,6 +25,7 @@ class Chat:
         print(color.blue+"[you]:"+color.end,end="")
 
         s = "".join(list(iter(input, '')))
+        print("message received...")
         if self.__is_input_ok(s):           
             print(color.yellow+"[robot]:"+color.end+"\n")
             self.m.run(s,self.stream)
