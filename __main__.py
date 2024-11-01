@@ -16,5 +16,8 @@ if __name__ == "__main__":
             print("error: no prompt to send!")
             sys.exit(-2)
 
-        print(m.ask(parser.get_prompt()))
-        
+        m.run(parser.get_prompt(),parser.is_streaming())
+    else:
+        from chat import Chat
+        interface = Chat(parser.get_key(),parser.is_streaming())
+        interface.run()
