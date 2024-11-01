@@ -7,7 +7,7 @@ class Parser:
         self.parser.add_argument("key",type=str,help="Mistral AI API key.")
         self.parser.add_argument("-p","--prompt",type=str,default="",help="prompt to send.")
         self.parser.add_argument("-i","--interactive",action="store_true",help="run in interactive mode.")
-        
+        self.parser.add_argument("-s","--stream",action="store_true",help="streaming response.")
         self.__args = self.parser.parse_args()
 
     def get_key(self):
@@ -18,4 +18,7 @@ class Parser:
 
     def is_interactive(self):
         return self.__args.interactive
+
+    def is_streaming(self):
+        return self.__args.stream
 
