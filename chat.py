@@ -20,12 +20,13 @@ class Chat:
             if ch.isalpha() or ch.isdigit():
                 check = True
         return check
-    
+
     def __run_chat(self):
         print(color.blue+"[you]:"+color.end,end="")
 
         s = "".join(list(iter(input, '')))
-        print("message received...")
+        print(color.warning+"[system message]:"+color.end,end="")
+        print("please, stand by")
         if self.__is_input_ok(s):           
             print(color.yellow+"[robot]:"+color.end+"\n")
             self.m.run(s,self.stream)
